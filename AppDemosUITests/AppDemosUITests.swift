@@ -30,6 +30,16 @@ class AppDemosUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        //let app = XCUIApplication()
+        app.buttons["Mostrar"].tap()
+        app.navigationBars["AppDemos.ShowMovieTableView"].buttons["Back"].tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Car"].tap()
+        tabBarsQuery.buttons["Test"].tap()
+        
+                
     }
 
     func testLaunchPerformance() {
@@ -39,5 +49,10 @@ class AppDemosUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    func lanzarPrueba(){
+        
+        
     }
 }
