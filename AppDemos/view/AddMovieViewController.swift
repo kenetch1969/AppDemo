@@ -19,12 +19,18 @@ class AddMovieViewController: UIViewController {
     
     private var isFavorite = false
     private var movie: Movies = Movies()
+    private var optionsGenre = ["Accion", "Suspenso", "Terror", "Aventura"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         movie.favorite = isFavorite
+        
+        let pickerGenre = UIPickerView()
+        pickerGenre.delegate = self
+        pickerGenre.dataSource = self
+        textFieldGenre.inputView = pickerGenre
     }
     
     
@@ -87,4 +93,24 @@ class AddMovieViewController: UIViewController {
         }
     }
 
+}
+
+extension AddMovieViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return optionsGenre.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return optionsGenre[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.textFieldGenre.text = optionsGenre[row]
+    }
+    
 }

@@ -19,7 +19,7 @@ class TestURLSessionViewController: UIViewController {
     
     @IBAction func actionTestGet(_ sender: Any) {
         let session = URLSession.shared
-        let url = URL(string: "https://learnappmaking.com/ex/users.json")!
+        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
         
         let task = session.dataTask(with: url) { data, response, error in
         
