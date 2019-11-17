@@ -256,6 +256,44 @@
             </objects>
             <point key="canvasLocation" x="1928.985507246377" y="77.678571428571431"/>
         </scene>
+        <!--JsonExamples-->
+        <scene sceneID="IFa-Ec-0Ya">
+            <objects>
+                <viewController id="9K2-gp-psy" customClass="JsonExamplesViewController" customModule="AppDemos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gqq-n8-4lo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mDp-ZP-4O4">
+                                <rect key="frame" x="76" y="90" width="223" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="0"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                    <segment title="6"/>
+                                    <segment title="7"/>
+                                </segments>
+                                <connections>
+                                    <action selector="actionSegmented:" destination="9K2-gp-psy" eventType="valueChanged" id="WvH-4u-dps"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Vh9-jL-se0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="JsonExamples" id="Lj4-4W-XLI"/>
+                    <connections>
+                        <outlet property="segmentedTest" destination="mDp-ZP-4O4" id="nIW-88-Otn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yDA-tI-Nql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="-349"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kNV-0h-TDh">
             <objects>
@@ -272,6 +310,7 @@
                         <segue destination="9Jg-x0-vQB" kind="relationship" relationship="viewControllers" id="cwo-I8-Riq"/>
                         <segue destination="YI0-Dw-hgW" kind="relationship" relationship="viewControllers" id="l2e-k8-9fM"/>
                         <segue destination="qKp-Jf-06X" kind="relationship" relationship="viewControllers" id="Wqy-bc-MyK"/>
+                        <segue destination="9K2-gp-psy" kind="relationship" relationship="viewControllers" id="xmg-Il-dOV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZa-8w-ZI1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
