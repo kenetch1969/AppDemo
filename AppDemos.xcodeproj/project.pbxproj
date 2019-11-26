@@ -26,6 +26,9 @@
 		42B17C2D237CB65B005FE7E5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B17C2C237CB65B005FE7E5 /* Car.swift */; };
 		42B17C30237CBA09005FE7E5 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B17C2F237CBA09005FE7E5 /* CarViewController.swift */; };
 		42B17C32237CBC97005FE7E5 /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B17C31237CBC97005FE7E5 /* CarTests.swift */; };
+		42B19B932386CE4D004F51BB /* ShowCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B19B922386CE4D004F51BB /* ShowCollectionViewController.swift */; };
+		42C03DC4238C0F690092527E /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C03DC3238C0F690092527E /* CoreDataViewController.swift */; };
+		42C03DC6238C14CA0092527E /* SingletonOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C03DC5238C14CA0092527E /* SingletonOperation.swift */; };
 		42D9F139237DC1E20037C769 /* TestURLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D9F138237DC1E20037C769 /* TestURLSessionViewController.swift */; };
 		42E051E223803BDB002EB88E /* TestControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E051E123803BDB002EB88E /* TestControlsViewController.swift */; };
 		42E051E423805B3B002EB88E /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E051E323805B3B002EB88E /* UIViewController+extension.swift */; };
@@ -76,6 +79,9 @@
 		42B17C2C237CB65B005FE7E5 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		42B17C2F237CBA09005FE7E5 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		42B17C31237CBC97005FE7E5 /* CarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTests.swift; sourceTree = "<group>"; };
+		42B19B922386CE4D004F51BB /* ShowCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCollectionViewController.swift; sourceTree = "<group>"; };
+		42C03DC3238C0F690092527E /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		42C03DC5238C14CA0092527E /* SingletonOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonOperation.swift; sourceTree = "<group>"; };
 		42D9F136237DB8300037C769 /* URLSession.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = URLSession.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		42D9F138237DC1E20037C769 /* TestURLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestURLSessionViewController.swift; sourceTree = "<group>"; };
 		42E051E123803BDB002EB88E /* TestControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestControlsViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 		424287A0237C41BE00242B98 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				42C03DC2238C0F410092527E /* CoreData */,
 				42E9403723819533001ADC45 /* JsonExamples */,
 				42E051E023803BAB002EB88E /* Controls */,
 				42584D11237EE20000B9E1B6 /* JsonTable */,
@@ -179,6 +186,7 @@
 				424287A1237C446400242B98 /* AddMovieViewController.swift */,
 				424287A3237C44F200242B98 /* ShowMovieTableViewController.swift */,
 				424287A8237C487800242B98 /* MoviesTableViewCell.swift */,
+				42B19B922386CE4D004F51BB /* ShowCollectionViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -215,6 +223,15 @@
 				42B17C2F237CBA09005FE7E5 /* CarViewController.swift */,
 			);
 			path = Car;
+			sourceTree = "<group>";
+		};
+		42C03DC2238C0F410092527E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				42C03DC3238C0F690092527E /* CoreDataViewController.swift */,
+				42C03DC5238C14CA0092527E /* SingletonOperation.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		42D9F135237DB7710037C769 /* playgroud */ = {
@@ -389,18 +406,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B19B932386CE4D004F51BB /* ShowCollectionViewController.swift in Sources */,
 				42E940392381954E001ADC45 /* JsonExamplesViewController.swift in Sources */,
 				42E051E423805B3B002EB88E /* UIViewController+extension.swift in Sources */,
 				424287A7237C452000242B98 /* Movies.swift in Sources */,
 				424287AC237C523400242B98 /* Extensions.swift in Sources */,
 				42B17C2D237CB65B005FE7E5 /* Car.swift in Sources */,
 				42428772237C3E1A00242B98 /* ViewController.swift in Sources */,
+				42C03DC6238C14CA0092527E /* SingletonOperation.swift in Sources */,
 				42B17C30237CBA09005FE7E5 /* CarViewController.swift in Sources */,
 				42E9403623819260001ADC45 /* JsonTest.swift in Sources */,
 				42584D13237EE23300B9E1B6 /* JsonTableViewController.swift in Sources */,
 				42584D10237EDFE600B9E1B6 /* Posts.swift in Sources */,
 				424287A9237C487800242B98 /* MoviesTableViewCell.swift in Sources */,
 				424287A4237C44F200242B98 /* ShowMovieTableViewController.swift in Sources */,
+				42C03DC4238C0F690092527E /* CoreDataViewController.swift in Sources */,
 				42E051E223803BDB002EB88E /* TestControlsViewController.swift in Sources */,
 				4242876E237C3E1A00242B98 /* AppDelegate.swift in Sources */,
 				42428778237C3E1A00242B98 /* AppDemos.xcdatamodeld in Sources */,

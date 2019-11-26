@@ -80,43 +80,68 @@ class JsonTableViewController: UITableViewController {
         return swipeActionConfig
     }
     
-    func parseJSON () {
-        
+    func parseJSON() {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, response, error) in
-            guard let response = response as? HTTPURLResponse, [200, 201].contains(response.statusCode) else { return }
+            guard let httpResponse = response as? HTTPURLResponse, [200,201].contains(httpResponse.statusCode),
+                let mimetype = response?.mimeType, mimetype == "application/json", let data = data, error == nil else { return }
             
-            guard let mime = response.mimeType, mime == "application/json" else {
-                print("Wrong MIME type!")
-                return
-            }
-            
-            if let data = data {
-                do {
-                      let json = try JSONSerialization.jsonObject(with: data, options: [])
-                      print(json)
-                    
-                    do {
-                        let decodedObject = try JSONDecoder().decode([Post].self, from: data)
+            do {
+                
+                let decodedObject = try JSONDecoder().decode([Post].self, from: data)
+                self.post = decodedObject
 
-                        self.post = decodedObject
-
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-
-                    } catch let error {
-                        print("Error occurred while trying to convert JSON data into Swift types \(error.localizedDescription)")
-                    }
-                    
-                } catch {
-                   print(error)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
+                
+            } catch let err as NSError {
+                print(err.userInfo.description)
             }
+            
         }.resume()
+        
     }
+    
+//    func parseJSON () {
+//
+//        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+//
+//        let session = URLSession.shared
+//        session.dataTask(with: url) { (data, response, error) in
+//            guard let response = response as? HTTPURLResponse, [200, 201].contains(response.statusCode) else { return }
+//
+//            guard let mime = response.mimeType, mime == "application/json" else {
+//                print("Wrong MIME type!")
+//                return
+//            }
+//
+//            if let data = data {
+//                do {
+//                      let json = try JSONSerialization.jsonObject(with: data, options: [])
+//                      print(json)
+//
+//                    do {
+//                        let decodedObject = try JSONDecoder().decode([Post].self, from: data)
+//
+//                        self.post = decodedObject
+//
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
+//
+//                    } catch let error {
+//                        print("Error occurred while trying to convert JSON data into Swift types \(error.localizedDescription)")
+//                    }
+//
+//                } catch {
+//                   print(error)
+//                }
+//            }
+//        }.resume()
+//    }
 
     /*
     // Override to support conditional editing of the table view.
